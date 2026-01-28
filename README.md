@@ -203,7 +203,6 @@ Comprehensive documentation available in `docs/`:
 
 ## Contributing
 
-### For Team Members
 
 1. **Never commit your `.env` file** - It contains your API key!
 2. Follow the setup guide in [SETUP.md](SETUP.md)
