@@ -1,0 +1,276 @@
+{
+    "metadata": {
+        "version": "1.0.0",
+        "lastUpdated": "2026-01-27",
+        "description": "Laptop models database for UIT Hardware Specialist",
+        "categories": [
+            "Gaming",
+            "Professional",
+            "Ultrabook",
+            "Budget"
+        ]
+    },
+    "laptops": [
+        {
+            "id": "l-mbp-m3",
+            "name": "MacBook Pro 14 (M3 Pro)",
+            "manufacturer": "Apple",
+            "processor": "M3 Pro",
+            "ram": 18,
+            "storage": 512,
+            "gpu": "Integrated (M3 Pro)",
+            "display": "14-inch Liquid Retina XDR",
+            "batteryLifeHours": {
+                "min": 18,
+                "max": 22,
+                "rating": "Excellent"
+            },
+            "weight": 1.55,
+            "tier": "high-end",
+            "category": "Professional",
+            "priceRange": "$1999-$2499",
+            "specs": "M3 Pro, 18GB RAM, 512GB SSD",
+            "battery": "18-22h (Excellent)",
+            "workloadSuitability": {
+                "coding": 95,
+                "mobileEmulation": 70,
+                "graphics": 80,
+                "portability": 95
+            },
+            "thermalManagement": "Excellent",
+            "notes": "Best battery life and build quality, limited compatibility with some development tools"
+        },
+        {
+            "id": "l-g14",
+            "name": "ASUS ROG Zephyrus G14",
+            "manufacturer": "ASUS",
+            "processor": "AMD Ryzen 9 7940HS",
+            "ram": 32,
+            "storage": 1000,
+            "gpu": "NVIDIA RTX 4070",
+            "display": "14-inch QHD+ 165Hz",
+            "batteryLifeHours": {
+                "min": 8,
+                "max": 10,
+                "rating": "Good"
+            },
+            "weight": 1.65,
+            "tier": "high-end",
+            "category": "Gaming",
+            "priceRange": "$1799-$2199",
+            "specs": "Ryzen 9, RTX 4070, 32GB RAM",
+            "battery": "8-10h (Good)",
+            "workloadSuitability": {
+                "coding": 90,
+                "mobileEmulation": 90,
+                "graphics": 95,
+                "portability": 85
+            },
+            "thermalManagement": "Very Good",
+            "notes": "Great balance of power and portability"
+        },
+        {
+            "id": "l-legion7",
+            "name": "Lenovo Legion Pro 7i",
+            "manufacturer": "Lenovo",
+            "processor": "Intel Core i9-13900HX",
+            "ram": 32,
+            "storage": 1000,
+            "gpu": "NVIDIA RTX 4080",
+            "display": "16-inch WQXGA 240Hz",
+            "batteryLifeHours": {
+                "min": 3,
+                "max": 5,
+                "rating": "Poor"
+            },
+            "weight": 2.5,
+            "tier": "high-end",
+            "category": "Gaming",
+            "priceRange": "$2099-$2699",
+            "specs": "i9-13900HX, RTX 4080, 32GB RAM",
+            "battery": "3-5h (Poor)",
+            "workloadSuitability": {
+                "coding": 95,
+                "mobileEmulation": 95,
+                "graphics": 100,
+                "portability": 50
+            },
+            "thermalManagement": "Good",
+            "notes": "Maximum performance but heavy and poor battery life"
+        },
+        {
+            "id": "l-mba-m2",
+            "name": "MacBook Air 13 (M2)",
+            "manufacturer": "Apple",
+            "processor": "Apple M2",
+            "ram": 16,
+            "storage": 256,
+            "gpu": "Integrated (M2)",
+            "display": "13.6-inch Liquid Retina",
+            "batteryLifeHours": {
+                "min": 15,
+                "max": 18,
+                "rating": "Excellent"
+            },
+            "weight": 1.24,
+            "tier": "mid-range",
+            "category": "Ultrabook",
+            "priceRange": "$1199-$1499",
+            "specs": "M2, 16GB RAM, 256GB SSD",
+            "battery": "15-18h (Excellent)",
+            "workloadSuitability": {
+                "coding": 85,
+                "mobileEmulation": 60,
+                "graphics": 65,
+                "portability": 95
+            },
+            "thermalManagement": "Excellent (Fanless)",
+            "notes": "Perfect for light development and portability"
+        },
+        {
+            "id": "l-legion5",
+            "name": "Lenovo Legion 5",
+            "manufacturer": "Lenovo",
+            "processor": "AMD Ryzen 7 7735HS",
+            "ram": 16,
+            "storage": 512,
+            "gpu": "NVIDIA RTX 4060",
+            "display": "15.6-inch FHD 165Hz",
+            "batteryLifeHours": {
+                "min": 4,
+                "max": 6,
+                "rating": "Average"
+            },
+            "weight": 2.4,
+            "tier": "mid-range",
+            "category": "Gaming",
+            "priceRange": "$1099-$1399",
+            "specs": "Ryzen 7, RTX 4060, 16GB RAM",
+            "battery": "4-6h (Average)",
+            "workloadSuitability": {
+                "coding": 80,
+                "mobileEmulation": 80,
+                "graphics": 85,
+                "portability": 60
+            },
+            "thermalManagement": "Good",
+            "notes": "Solid mid-range option for students"
+        },
+        {
+            "id": "l-tuf",
+            "name": "ASUS TUF A15",
+            "manufacturer": "ASUS",
+            "processor": "AMD Ryzen 7 7735HS",
+            "ram": 16,
+            "storage": 512,
+            "gpu": "NVIDIA RTX 4050",
+            "display": "15.6-inch FHD 144Hz",
+            "batteryLifeHours": {
+                "min": 6,
+                "max": 8,
+                "rating": "Good"
+            },
+            "weight": 2.2,
+            "tier": "mid-range",
+            "category": "Gaming",
+            "priceRange": "$899-$1099",
+            "specs": "Ryzen 7, RTX 4050, 16GB RAM",
+            "battery": "6-8h (Good)",
+            "workloadSuitability": {
+                "coding": 75,
+                "mobileEmulation": 75,
+                "graphics": 75,
+                "portability": 65
+            },
+            "thermalManagement": "Good",
+            "notes": "Durable with decent performance"
+        },
+        {
+            "id": "l-nitro",
+            "name": "Acer Nitro 5",
+            "manufacturer": "Acer",
+            "processor": "Intel Core i5-12500H",
+            "ram": 16,
+            "storage": 512,
+            "gpu": "NVIDIA RTX 3050",
+            "display": "15.6-inch FHD 144Hz",
+            "batteryLifeHours": {
+                "min": 3,
+                "max": 4,
+                "rating": "Below Average"
+            },
+            "weight": 2.5,
+            "tier": "budget",
+            "category": "Gaming",
+            "priceRange": "$699-$899",
+            "specs": "i5-12500H, RTX 3050, 16GB RAM",
+            "battery": "3-4h (Below Avg)",
+            "workloadSuitability": {
+                "coding": 65,
+                "mobileEmulation": 65,
+                "graphics": 65,
+                "portability": 50
+            },
+            "thermalManagement": "Average",
+            "notes": "Budget gaming laptop with compromises"
+        },
+        {
+            "id": "l-victus",
+            "name": "HP Victus 15",
+            "manufacturer": "HP",
+            "processor": "Intel Core i5-12450H",
+            "ram": 8,
+            "storage": 512,
+            "gpu": "NVIDIA GTX 1650",
+            "display": "15.6-inch FHD 60Hz",
+            "batteryLifeHours": {
+                "min": 4,
+                "max": 5,
+                "rating": "Average"
+            },
+            "weight": 2.3,
+            "tier": "budget",
+            "category": "Budget",
+            "priceRange": "$599-$749",
+            "specs": "i5-12450H, GTX 1650, 8GB RAM",
+            "battery": "4-5h (Average)",
+            "workloadSuitability": {
+                "coding": 60,
+                "mobileEmulation": 50,
+                "graphics": 50,
+                "portability": 55
+            },
+            "thermalManagement": "Average",
+            "notes": "Entry-level option, RAM upgrade recommended"
+        },
+        {
+            "id": "l-idea",
+            "name": "Lenovo IdeaPad Slim",
+            "manufacturer": "Lenovo",
+            "processor": "AMD Ryzen 5 5500U",
+            "ram": 8,
+            "storage": 256,
+            "gpu": "Integrated Radeon Graphics",
+            "display": "15.6-inch FHD",
+            "batteryLifeHours": {
+                "min": 7,
+                "max": 9,
+                "rating": "Good"
+            },
+            "weight": 1.65,
+            "tier": "budget",
+            "category": "Budget",
+            "priceRange": "$399-$549",
+            "specs": "Ryzen 5 5500U, Integrated Graphics, 8GB RAM",
+            "battery": "7-9h (Good)",
+            "workloadSuitability": {
+                "coding": 55,
+                "mobileEmulation": 30,
+                "graphics": 25,
+                "portability": 75
+            },
+            "thermalManagement": "Good",
+            "notes": "Basic laptop for light coding only"
+        }
+    ]
+}

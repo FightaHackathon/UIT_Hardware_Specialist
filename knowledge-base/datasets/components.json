@@ -1,0 +1,799 @@
+{
+    "metadata": {
+        "version": "1.0.0",
+        "lastUpdated": "2026-01-27",
+        "description": "Comprehensive PC component database for UIT Hardware Specialist",
+        "categories": [
+            "CPU",
+            "Motherboard",
+            "GPU",
+            "RAM",
+            "Storage",
+            "PSU",
+            "Case"
+        ]
+    },
+    "CPU": {
+        "metadata": {
+            "category": "Processor",
+            "criticalSpecs": [
+                "socket",
+                "cores",
+                "threads",
+                "tdp",
+                "generation"
+            ],
+            "description": "Central Processing Unit - the brain of the computer"
+        },
+        "components": [
+            {
+                "id": "c-14900k",
+                "name": "Intel Core i9-14900K",
+                "manufacturer": "Intel",
+                "socket": "LGA1700",
+                "cores": 24,
+                "threads": 32,
+                "baseClock": "3.0 GHz",
+                "boostClock": "6.0 GHz",
+                "tdp": 125,
+                "maxTdp": 253,
+                "generation": "14th Gen",
+                "tier": "high-end",
+                "priceRange": "$589-$649",
+                "specs": "LGA1700, 24 Cores",
+                "workloadSuitability": {
+                    "coding": 95,
+                    "mobileEmulation": 95,
+                    "graphics": 90,
+                    "docker": 95
+                }
+            },
+            {
+                "id": "c-7950x",
+                "name": "AMD Ryzen 9 7950X",
+                "manufacturer": "AMD",
+                "socket": "AM5",
+                "cores": 16,
+                "threads": 32,
+                "baseClock": "4.5 GHz",
+                "boostClock": "5.7 GHz",
+                "tdp": 170,
+                "maxTdp": 230,
+                "generation": "Zen 4",
+                "tier": "high-end",
+                "priceRange": "$549-$699",
+                "specs": "AM5, 16 Cores",
+                "workloadSuitability": {
+                    "coding": 95,
+                    "mobileEmulation": 95,
+                    "graphics": 90,
+                    "docker": 95
+                }
+            },
+            {
+                "id": "c-13600k",
+                "name": "Intel Core i5-13600K",
+                "manufacturer": "Intel",
+                "socket": "LGA1700",
+                "cores": 14,
+                "threads": 20,
+                "baseClock": "3.5 GHz",
+                "boostClock": "5.1 GHz",
+                "tdp": 125,
+                "maxTdp": 181,
+                "generation": "13th Gen",
+                "tier": "mid-range",
+                "priceRange": "$289-$329",
+                "specs": "LGA1700, 14 Cores",
+                "workloadSuitability": {
+                    "coding": 85,
+                    "mobileEmulation": 85,
+                    "graphics": 80,
+                    "docker": 85
+                }
+            },
+            {
+                "id": "c-7600",
+                "name": "AMD Ryzen 5 7600",
+                "manufacturer": "AMD",
+                "socket": "AM5",
+                "cores": 6,
+                "threads": 12,
+                "baseClock": "3.8 GHz",
+                "boostClock": "5.1 GHz",
+                "tdp": 65,
+                "maxTdp": 88,
+                "generation": "Zen 4",
+                "tier": "mid-range",
+                "priceRange": "$229-$299",
+                "specs": "AM5, 6 Cores",
+                "workloadSuitability": {
+                    "coding": 75,
+                    "mobileEmulation": 70,
+                    "graphics": 65,
+                    "docker": 70
+                }
+            },
+            {
+                "id": "c-12400f",
+                "name": "Intel Core i5-12400F",
+                "manufacturer": "Intel",
+                "socket": "LGA1700",
+                "cores": 6,
+                "threads": 12,
+                "baseClock": "2.5 GHz",
+                "boostClock": "4.4 GHz",
+                "tdp": 65,
+                "maxTdp": 117,
+                "generation": "12th Gen",
+                "tier": "budget",
+                "priceRange": "$159-$189",
+                "specs": "LGA1700, 6 Cores (Budget King)",
+                "workloadSuitability": {
+                    "coding": 70,
+                    "mobileEmulation": 65,
+                    "graphics": 60,
+                    "docker": 65
+                }
+            },
+            {
+                "id": "c-5600",
+                "name": "AMD Ryzen 5 5600",
+                "manufacturer": "AMD",
+                "socket": "AM4",
+                "cores": 6,
+                "threads": 12,
+                "baseClock": "3.5 GHz",
+                "boostClock": "4.4 GHz",
+                "tdp": 65,
+                "maxTdp": 88,
+                "generation": "Zen 3",
+                "tier": "budget",
+                "priceRange": "$129-$159",
+                "specs": "AM4, 6 Cores (Budget)",
+                "workloadSuitability": {
+                    "coding": 70,
+                    "mobileEmulation": 65,
+                    "graphics": 60,
+                    "docker": 65
+                }
+            },
+            {
+                "id": "c-12100f",
+                "name": "Intel Core i3-12100F",
+                "manufacturer": "Intel",
+                "socket": "LGA1700",
+                "cores": 4,
+                "threads": 8,
+                "baseClock": "3.3 GHz",
+                "boostClock": "4.3 GHz",
+                "tdp": 58,
+                "maxTdp": 89,
+                "generation": "12th Gen",
+                "tier": "entry-level",
+                "priceRange": "$97-$119",
+                "specs": "LGA1700, 4 Cores",
+                "workloadSuitability": {
+                    "coding": 55,
+                    "mobileEmulation": 45,
+                    "graphics": 40,
+                    "docker": 50
+                }
+            },
+            {
+                "id": "c-5500",
+                "name": "AMD Ryzen 5 5500",
+                "manufacturer": "AMD",
+                "socket": "AM4",
+                "cores": 6,
+                "threads": 12,
+                "baseClock": "3.6 GHz",
+                "boostClock": "4.2 GHz",
+                "tdp": 65,
+                "maxTdp": 88,
+                "generation": "Zen 3",
+                "tier": "entry-level",
+                "priceRange": "$89-$109",
+                "specs": "AM4, 6 Cores (Old Gen)",
+                "workloadSuitability": {
+                    "coding": 60,
+                    "mobileEmulation": 55,
+                    "graphics": 50,
+                    "docker": 55
+                }
+            }
+        ]
+    },
+    "GPU": {
+        "metadata": {
+            "category": "Graphics Card",
+            "criticalSpecs": [
+                "vram",
+                "tdp",
+                "cudaCores",
+                "rtCores"
+            ],
+            "description": "Graphics Processing Unit - handles rendering and parallel computation"
+        },
+        "components": [
+            {
+                "id": "g-4090",
+                "name": "NVIDIA RTX 4090",
+                "manufacturer": "NVIDIA",
+                "vram": 24,
+                "vramType": "GDDR6X",
+                "tdp": 450,
+                "cudaCores": 16384,
+                "rtCores": 128,
+                "tensorCores": 512,
+                "tier": "high-end",
+                "priceRange": "$1599-$1999",
+                "specs": "24GB VRAM, 450W",
+                "workloadSuitability": {
+                    "coding": 70,
+                    "mobileEmulation": 80,
+                    "graphics": 100,
+                    "aiml": 100
+                }
+            },
+            {
+                "id": "g-7900xtx",
+                "name": "AMD Radeon RX 7900 XTX",
+                "manufacturer": "AMD",
+                "vram": 24,
+                "vramType": "GDDR6",
+                "tdp": 355,
+                "streamProcessors": 6144,
+                "tier": "high-end",
+                "priceRange": "$899-$999",
+                "specs": "24GB VRAM, 355W",
+                "workloadSuitability": {
+                    "coding": 70,
+                    "mobileEmulation": 75,
+                    "graphics": 95,
+                    "aiml": 85
+                }
+            },
+            {
+                "id": "g-4070",
+                "name": "NVIDIA RTX 4070",
+                "manufacturer": "NVIDIA",
+                "vram": 12,
+                "vramType": "GDDR6X",
+                "tdp": 200,
+                "cudaCores": 5888,
+                "rtCores": 46,
+                "tensorCores": 184,
+                "tier": "mid-range",
+                "priceRange": "$549-$599",
+                "specs": "12GB VRAM, 200W",
+                "workloadSuitability": {
+                    "coding": 60,
+                    "mobileEmulation": 70,
+                    "graphics": 85,
+                    "aiml": 85
+                }
+            },
+            {
+                "id": "g-4060ti",
+                "name": "NVIDIA RTX 4060 Ti",
+                "manufacturer": "NVIDIA",
+                "vram": 8,
+                "vramType": "GDDR6",
+                "tdp": 160,
+                "cudaCores": 4352,
+                "rtCores": 34,
+                "tensorCores": 136,
+                "tier": "mid-range",
+                "priceRange": "$399-$499",
+                "specs": "8GB/16GB VRAM, 160W",
+                "workloadSuitability": {
+                    "coding": 50,
+                    "mobileEmulation": 65,
+                    "graphics": 75,
+                    "aiml": 75
+                }
+            },
+            {
+                "id": "g-7700xt",
+                "name": "AMD Radeon RX 7700 XT",
+                "manufacturer": "AMD",
+                "vram": 12,
+                "vramType": "GDDR6",
+                "tdp": 245,
+                "streamProcessors": 3456,
+                "tier": "mid-range",
+                "priceRange": "$449-$499",
+                "specs": "12GB VRAM, 245W",
+                "workloadSuitability": {
+                    "coding": 50,
+                    "mobileEmulation": 65,
+                    "graphics": 80,
+                    "aiml": 70
+                }
+            },
+            {
+                "id": "g-3060",
+                "name": "NVIDIA RTX 3060",
+                "manufacturer": "NVIDIA",
+                "vram": 12,
+                "vramType": "GDDR6",
+                "tdp": 170,
+                "cudaCores": 3584,
+                "rtCores": 28,
+                "tensorCores": 112,
+                "tier": "budget",
+                "priceRange": "$299-$349",
+                "specs": "12GB VRAM, 170W (Great for AI)",
+                "workloadSuitability": {
+                    "coding": 50,
+                    "mobileEmulation": 60,
+                    "graphics": 70,
+                    "aiml": 80
+                }
+            },
+            {
+                "id": "g-6600",
+                "name": "AMD Radeon RX 6600",
+                "manufacturer": "AMD",
+                "vram": 8,
+                "vramType": "GDDR6",
+                "tdp": 132,
+                "streamProcessors": 1792,
+                "tier": "budget",
+                "priceRange": "$229-$269",
+                "specs": "8GB VRAM, 132W",
+                "workloadSuitability": {
+                    "coding": 40,
+                    "mobileEmulation": 55,
+                    "graphics": 65,
+                    "aiml": 60
+                }
+            },
+            {
+                "id": "g-3050",
+                "name": "NVIDIA RTX 3050",
+                "manufacturer": "NVIDIA",
+                "vram": 8,
+                "vramType": "GDDR6",
+                "tdp": 130,
+                "cudaCores": 2560,
+                "rtCores": 20,
+                "tensorCores": 80,
+                "tier": "entry-level",
+                "priceRange": "$249-$299",
+                "specs": "8GB VRAM, 130W",
+                "workloadSuitability": {
+                    "coding": 40,
+                    "mobileEmulation": 50,
+                    "graphics": 60,
+                    "aiml": 65
+                }
+            },
+            {
+                "id": "g-1650",
+                "name": "NVIDIA GTX 1650",
+                "manufacturer": "NVIDIA",
+                "vram": 4,
+                "vramType": "GDDR6",
+                "tdp": 75,
+                "cudaCores": 896,
+                "tier": "entry-level",
+                "priceRange": "$139-$169",
+                "specs": "4GB VRAM, 75W (Low End)",
+                "workloadSuitability": {
+                    "coding": 30,
+                    "mobileEmulation": 35,
+                    "graphics": 40,
+                    "aiml": 30
+                }
+            }
+        ]
+    },
+    "Motherboard": {
+        "metadata": {
+            "category": "Motherboard",
+            "criticalSpecs": [
+                "socket",
+                "ramType",
+                "formFactor",
+                "chipset"
+            ],
+            "description": "Main circuit board connecting all components"
+        },
+        "components": [
+            {
+                "id": "m-z790",
+                "name": "ASUS ROG Maximus Z790",
+                "manufacturer": "ASUS",
+                "socket": "LGA1700",
+                "chipset": "Z790",
+                "ramType": "DDR5",
+                "maxRam": 128,
+                "ramSlots": 4,
+                "formFactor": "ATX",
+                "tier": "high-end",
+                "priceRange": "$399-$699",
+                "specs": "LGA1700, DDR5, ATX"
+            },
+            {
+                "id": "m-x670e",
+                "name": "ASRock X670E Taichi",
+                "manufacturer": "ASRock",
+                "socket": "AM5",
+                "chipset": "X670E",
+                "ramType": "DDR5",
+                "maxRam": 128,
+                "ramSlots": 4,
+                "formFactor": "E-ATX",
+                "tier": "high-end",
+                "priceRange": "$449-$699",
+                "specs": "AM5, DDR5, E-ATX"
+            },
+            {
+                "id": "m-b760",
+                "name": "MSI B760 Gaming Plus",
+                "manufacturer": "MSI",
+                "socket": "LGA1700",
+                "chipset": "B760",
+                "ramType": "DDR5",
+                "maxRam": 128,
+                "ramSlots": 4,
+                "formFactor": "ATX",
+                "tier": "mid-range",
+                "priceRange": "$189-$229",
+                "specs": "LGA1700, DDR5, ATX"
+            },
+            {
+                "id": "m-b650",
+                "name": "MSI MAG B650 Tomahawk",
+                "manufacturer": "MSI",
+                "socket": "AM5",
+                "chipset": "B650",
+                "ramType": "DDR5",
+                "maxRam": 128,
+                "ramSlots": 4,
+                "formFactor": "ATX",
+                "tier": "mid-range",
+                "priceRange": "$199-$249",
+                "specs": "AM5, DDR5, ATX"
+            },
+            {
+                "id": "m-b550",
+                "name": "ASUS TUF B550-Plus",
+                "manufacturer": "ASUS",
+                "socket": "AM4",
+                "chipset": "B550",
+                "ramType": "DDR4",
+                "maxRam": 128,
+                "ramSlots": 4,
+                "formFactor": "ATX",
+                "tier": "mid-range",
+                "priceRange": "$139-$179",
+                "specs": "AM4, DDR4, ATX"
+            },
+            {
+                "id": "m-h610m",
+                "name": "Gigabyte H610M",
+                "manufacturer": "Gigabyte",
+                "socket": "LGA1700",
+                "chipset": "H610",
+                "ramType": "DDR4",
+                "maxRam": 64,
+                "ramSlots": 2,
+                "formFactor": "mATX",
+                "tier": "budget",
+                "priceRange": "$89-$119",
+                "specs": "LGA1700, DDR4, mATX"
+            },
+            {
+                "id": "m-a520m",
+                "name": "MSI A520M-A Pro",
+                "manufacturer": "MSI",
+                "socket": "AM4",
+                "chipset": "A520",
+                "ramType": "DDR4",
+                "maxRam": 64,
+                "ramSlots": 2,
+                "formFactor": "mATX",
+                "tier": "budget",
+                "priceRange": "$69-$89",
+                "specs": "AM4, DDR4, mATX"
+            }
+        ]
+    },
+    "RAM": {
+        "metadata": {
+            "category": "Memory",
+            "criticalSpecs": [
+                "type",
+                "capacity",
+                "speed",
+                "modules"
+            ],
+            "description": "Random Access Memory - temporary data storage"
+        },
+        "components": [
+            {
+                "id": "r-64-d5",
+                "name": "Corsair Vengeance 64GB (2x32)",
+                "manufacturer": "Corsair",
+                "type": "DDR5",
+                "capacity": 64,
+                "speed": 6000,
+                "modules": "2x32GB",
+                "latency": "CL36",
+                "tier": "high-end",
+                "priceRange": "$219-$279",
+                "specs": "DDR5-6000MHz"
+            },
+            {
+                "id": "r-32-d5",
+                "name": "G.Skill Trident Z5 32GB (2x16)",
+                "manufacturer": "G.Skill",
+                "type": "DDR5",
+                "capacity": 32,
+                "speed": 6000,
+                "modules": "2x16GB",
+                "latency": "CL36",
+                "tier": "mid-range",
+                "priceRange": "$119-$149",
+                "specs": "DDR5-6000MHz"
+            },
+            {
+                "id": "r-16-d5",
+                "name": "Crucial 16GB (2x8)",
+                "manufacturer": "Crucial",
+                "type": "DDR5",
+                "capacity": 16,
+                "speed": 4800,
+                "modules": "2x8GB",
+                "latency": "CL40",
+                "tier": "entry-level",
+                "priceRange": "$59-$79",
+                "specs": "DDR5-4800MHz (Entry)"
+            },
+            {
+                "id": "r-32-d4",
+                "name": "Kingston Fury 32GB (2x16)",
+                "manufacturer": "Kingston",
+                "type": "DDR4",
+                "capacity": 32,
+                "speed": 3200,
+                "modules": "2x16GB",
+                "latency": "CL16",
+                "tier": "mid-range",
+                "priceRange": "$79-$99",
+                "specs": "DDR4-3200MHz"
+            },
+            {
+                "id": "r-16-d4",
+                "name": "Corsair Vengeance LPX 16GB (2x8)",
+                "manufacturer": "Corsair",
+                "type": "DDR4",
+                "capacity": 16,
+                "speed": 3200,
+                "modules": "2x8GB",
+                "latency": "CL16",
+                "tier": "budget",
+                "priceRange": "$39-$59",
+                "specs": "DDR4-3200MHz"
+            },
+            {
+                "id": "r-8-d4",
+                "name": "G.Skill Ripjaws 8GB (1x8)",
+                "manufacturer": "G.Skill",
+                "type": "DDR4",
+                "capacity": 8,
+                "speed": 2666,
+                "modules": "1x8GB",
+                "latency": "CL19",
+                "tier": "entry-level",
+                "priceRange": "$19-$29",
+                "specs": "DDR4-2666MHz (Bare Minimum)"
+            }
+        ]
+    },
+    "Storage": {
+        "metadata": {
+            "category": "Storage",
+            "criticalSpecs": [
+                "capacity",
+                "interface",
+                "speed",
+                "generation"
+            ],
+            "description": "Persistent data storage devices"
+        },
+        "components": [
+            {
+                "id": "s-2tb-980",
+                "name": "Samsung 990 Pro 2TB",
+                "manufacturer": "Samsung",
+                "capacity": 2000,
+                "interface": "NVMe",
+                "generation": "Gen4",
+                "readSpeed": 7450,
+                "writeSpeed": 6900,
+                "tier": "high-end",
+                "priceRange": "$179-$229",
+                "specs": "NVMe Gen4"
+            },
+            {
+                "id": "s-1tb-wd",
+                "name": "WD Black SN770 1TB",
+                "manufacturer": "Western Digital",
+                "capacity": 1000,
+                "interface": "NVMe",
+                "generation": "Gen4",
+                "readSpeed": 5150,
+                "writeSpeed": 4900,
+                "tier": "mid-range",
+                "priceRange": "$79-$99",
+                "specs": "NVMe Gen4 (Mid)"
+            },
+            {
+                "id": "s-500-king",
+                "name": "Kingston NV2 500GB",
+                "manufacturer": "Kingston",
+                "capacity": 500,
+                "interface": "NVMe",
+                "generation": "Gen4",
+                "readSpeed": 3500,
+                "writeSpeed": 2100,
+                "tier": "budget",
+                "priceRange": "$34-$49",
+                "specs": "NVMe Gen4 (Budget)"
+            },
+            {
+                "id": "s-256-sata",
+                "name": "Crucial BX500 240GB",
+                "manufacturer": "Crucial",
+                "capacity": 240,
+                "interface": "SATA",
+                "generation": "SATA III",
+                "readSpeed": 540,
+                "writeSpeed": 500,
+                "tier": "entry-level",
+                "priceRange": "$19-$29",
+                "specs": "SATA SSD (Very Slow)"
+            }
+        ]
+    },
+    "PSU": {
+        "metadata": {
+            "category": "Power Supply",
+            "criticalSpecs": [
+                "wattage",
+                "efficiency",
+                "modular"
+            ],
+            "description": "Power Supply Unit - provides power to all components"
+        },
+        "components": [
+            {
+                "id": "p-1000",
+                "name": "MSI MPG A1000G",
+                "manufacturer": "MSI",
+                "wattage": 1000,
+                "efficiency": "80+ Gold",
+                "modular": "Full",
+                "tier": "high-end",
+                "priceRange": "$169-$199",
+                "specs": "1000W, 80+ Gold"
+            },
+            {
+                "id": "p-750",
+                "name": "Corsair RM750e",
+                "manufacturer": "Corsair",
+                "wattage": 750,
+                "efficiency": "80+ Gold",
+                "modular": "Full",
+                "tier": "mid-range",
+                "priceRange": "$99-$129",
+                "specs": "750W, 80+ Gold"
+            },
+            {
+                "id": "p-650",
+                "name": "MSI MAG A650BN",
+                "manufacturer": "MSI",
+                "wattage": 650,
+                "efficiency": "80+ Bronze",
+                "modular": "Non-Modular",
+                "tier": "budget",
+                "priceRange": "$59-$79",
+                "specs": "650W, 80+ Bronze"
+            },
+            {
+                "id": "p-550",
+                "name": "Corsair CV550",
+                "manufacturer": "Corsair",
+                "wattage": 550,
+                "efficiency": "80+ Bronze",
+                "modular": "Non-Modular",
+                "tier": "budget",
+                "priceRange": "$49-$69",
+                "specs": "550W, 80+ Bronze"
+            },
+            {
+                "id": "p-450",
+                "name": "Thermaltake Smart 430W",
+                "manufacturer": "Thermaltake",
+                "wattage": 430,
+                "efficiency": "80+ White",
+                "modular": "Non-Modular",
+                "tier": "entry-level",
+                "priceRange": "$29-$39",
+                "specs": "430W, 80+ White (Basic)"
+            }
+        ]
+    },
+    "Case": {
+        "metadata": {
+            "category": "PC Case",
+            "criticalSpecs": [
+                "formFactor",
+                "maxGpuLength",
+                "airflow"
+            ],
+            "description": "Chassis that houses all components"
+        },
+        "components": [
+            {
+                "id": "ca-o11",
+                "name": "Lian Li O11 Dynamic",
+                "manufacturer": "Lian Li",
+                "formFactor": "ATX",
+                "maxGpuLength": 420,
+                "airflow": "Excellent",
+                "tier": "high-end",
+                "priceRange": "$139-$179",
+                "specs": "ATX, Showpiece"
+            },
+            {
+                "id": "ca-4000d",
+                "name": "Corsair 4000D Airflow",
+                "manufacturer": "Corsair",
+                "formFactor": "ATX",
+                "maxGpuLength": 360,
+                "airflow": "Excellent",
+                "tier": "mid-range",
+                "priceRange": "$99-$129",
+                "specs": "ATX, Great Cooling"
+            },
+            {
+                "id": "ca-h510",
+                "name": "NZXT H5 Flow",
+                "manufacturer": "NZXT",
+                "formFactor": "ATX",
+                "maxGpuLength": 365,
+                "airflow": "Good",
+                "tier": "mid-range",
+                "priceRange": "$79-$99",
+                "specs": "ATX, Compact"
+            },
+            {
+                "id": "ca-matx",
+                "name": "DeepCool MACUBE 110",
+                "manufacturer": "DeepCool",
+                "formFactor": "mATX",
+                "maxGpuLength": 280,
+                "airflow": "Average",
+                "tier": "budget",
+                "priceRange": "$49-$69",
+                "specs": "mATX, Budget"
+            },
+            {
+                "id": "ca-office",
+                "name": "Generic Office Case",
+                "manufacturer": "Generic",
+                "formFactor": "ATX",
+                "maxGpuLength": 300,
+                "airflow": "Poor",
+                "tier": "entry-level",
+                "priceRange": "$29-$39",
+                "specs": "ATX, Poor Airflow"
+            }
+        ]
+    }
+}

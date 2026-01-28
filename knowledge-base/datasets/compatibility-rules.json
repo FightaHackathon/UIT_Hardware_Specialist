@@ -1,0 +1,359 @@
+{
+    "metadata": {
+        "version": "1.0.0",
+        "lastUpdated": "2026-01-27",
+        "description": "Hardware compatibility constraint rules for the UIT Hardware Specialist expert system"
+    },
+    "socketCompatibility": {
+        "description": "CPU-Motherboard socket matching rules",
+        "rules": {
+            "LGA1700": {
+                "compatibleCPUs": [
+                    "c-14900k",
+                    "c-13600k",
+                    "c-12400f",
+                    "c-12100f"
+                ],
+                "compatibleMotherboards": [
+                    "m-z790",
+                    "m-b760",
+                    "m-h610m"
+                ]
+            },
+            "AM5": {
+                "compatibleCPUs": [
+                    "c-7950x",
+                    "c-7600"
+                ],
+                "compatibleMotherboards": [
+                    "m-x670e",
+                    "m-b650"
+                ]
+            },
+            "AM4": {
+                "compatibleCPUs": [
+                    "c-5600",
+                    "c-5500"
+                ],
+                "compatibleMotherboards": [
+                    "m-b550",
+                    "m-a520m"
+                ]
+            }
+        }
+    },
+    "ramCompatibility": {
+        "description": "RAM type and motherboard compatibility",
+        "rules": {
+            "DDR5": {
+                "compatibleMotherboards": [
+                    "m-z790",
+                    "m-x670e",
+                    "m-b760",
+                    "m-b650"
+                ],
+                "compatibleRAM": [
+                    "r-64-d5",
+                    "r-32-d5",
+                    "r-16-d5"
+                ]
+            },
+            "DDR4": {
+                "compatibleMotherboards": [
+                    "m-b550",
+                    "m-h610m",
+                    "m-a520m"
+                ],
+                "compatibleRAM": [
+                    "r-32-d4",
+                    "r-16-d4",
+                    "r-8-d4"
+                ]
+            }
+        }
+    },
+    "formFactorCompatibility": {
+        "description": "Motherboard and case form factor matching",
+        "rules": {
+            "ATX": {
+                "motherboards": [
+                    "m-z790",
+                    "m-b760",
+                    "m-b650",
+                    "m-b550"
+                ],
+                "cases": [
+                    "ca-o11",
+                    "ca-4000d",
+                    "ca-h510",
+                    "ca-office"
+                ]
+            },
+            "E-ATX": {
+                "motherboards": [
+                    "m-x670e"
+                ],
+                "cases": [
+                    "ca-o11"
+                ]
+            },
+            "mATX": {
+                "motherboards": [
+                    "m-h610m",
+                    "m-a520m"
+                ],
+                "cases": [
+                    "ca-o11",
+                    "ca-4000d",
+                    "ca-h510",
+                    "ca-matx",
+                    "ca-office"
+                ]
+            }
+        }
+    },
+    "powerRequirements": {
+        "description": "Component power consumption and PSU wattage requirements",
+        "gpuRequirements": {
+            "g-4090": {
+                "tdp": 450,
+                "minimumPSU": 850,
+                "recommendedPSU": 1000,
+                "compatiblePSUs": [
+                    "p-1000"
+                ]
+            },
+            "g-7900xtx": {
+                "tdp": 355,
+                "minimumPSU": 750,
+                "recommendedPSU": 850,
+                "compatiblePSUs": [
+                    "p-1000",
+                    "p-750"
+                ]
+            },
+            "g-4070": {
+                "tdp": 200,
+                "minimumPSU": 650,
+                "recommendedPSU": 750,
+                "compatiblePSUs": [
+                    "p-1000",
+                    "p-750",
+                    "p-650"
+                ]
+            },
+            "g-4060ti": {
+                "tdp": 160,
+                "minimumPSU": 550,
+                "recommendedPSU": 650,
+                "compatiblePSUs": [
+                    "p-1000",
+                    "p-750",
+                    "p-650",
+                    "p-550"
+                ]
+            },
+            "g-7700xt": {
+                "tdp": 245,
+                "minimumPSU": 650,
+                "recommendedPSU": 750,
+                "compatiblePSUs": [
+                    "p-1000",
+                    "p-750",
+                    "p-650"
+                ]
+            },
+            "g-3060": {
+                "tdp": 170,
+                "minimumPSU": 550,
+                "recommendedPSU": 650,
+                "compatiblePSUs": [
+                    "p-1000",
+                    "p-750",
+                    "p-650",
+                    "p-550"
+                ]
+            },
+            "g-6600": {
+                "tdp": 132,
+                "minimumPSU": 450,
+                "recommendedPSU": 550,
+                "compatiblePSUs": [
+                    "p-1000",
+                    "p-750",
+                    "p-650",
+                    "p-550",
+                    "p-450"
+                ]
+            },
+            "g-3050": {
+                "tdp": 130,
+                "minimumPSU": 450,
+                "recommendedPSU": 550,
+                "compatiblePSUs": [
+                    "p-1000",
+                    "p-750",
+                    "p-650",
+                    "p-550",
+                    "p-450"
+                ]
+            },
+            "g-1650": {
+                "tdp": 75,
+                "minimumPSU": 350,
+                "recommendedPSU": 450,
+                "compatiblePSUs": [
+                    "p-1000",
+                    "p-750",
+                    "p-650",
+                    "p-550",
+                    "p-450"
+                ]
+            }
+        },
+        "systemBaselineWattage": {
+            "description": "Baseline power consumption for CPU, motherboard, RAM, storage, and peripherals",
+            "typical": 150,
+            "highEnd": 300
+        }
+    },
+    "bottleneckDetection": {
+        "description": "Rules for detecting component imbalance and bottlenecks",
+        "cpuGpuPairing": {
+            "highEndGPU": {
+                "gpus": [
+                    "g-4090",
+                    "g-7900xtx"
+                ],
+                "recommendedCPUs": [
+                    "c-14900k",
+                    "c-7950x",
+                    "c-13600k"
+                ],
+                "bottleneckCPUs": [
+                    "c-12100f",
+                    "c-5500"
+                ]
+            },
+            "midRangeGPU": {
+                "gpus": [
+                    "g-4070",
+                    "g-4060ti",
+                    "g-7700xt"
+                ],
+                "recommendedCPUs": [
+                    "c-14900k",
+                    "c-7950x",
+                    "c-13600k",
+                    "c-7600",
+                    "c-12400f"
+                ],
+                "bottleneckCPUs": [
+                    "c-12100f"
+                ]
+            },
+            "budgetGPU": {
+                "gpus": [
+                    "g-3060",
+                    "g-6600",
+                    "g-3050",
+                    "g-1650"
+                ],
+                "recommendedCPUs": [
+                    "c-13600k",
+                    "c-7600",
+                    "c-12400f",
+                    "c-5600",
+                    "c-12100f",
+                    "c-5500"
+                ],
+                "bottleneckCPUs": []
+            }
+        },
+        "ramSufficiency": {
+            "workloads": {
+                "coding": {
+                    "minimum": 8,
+                    "recommended": 16,
+                    "optimal": 32
+                },
+                "mobileEmulation": {
+                    "minimum": 16,
+                    "recommended": 32,
+                    "optimal": 64
+                },
+                "graphics": {
+                    "minimum": 16,
+                    "recommended": 32,
+                    "optimal": 64
+                },
+                "docker": {
+                    "minimum": 16,
+                    "recommended": 32,
+                    "optimal": 64
+                }
+            }
+        }
+    },
+    "validationRules": {
+        "description": "Core validation rules that must be satisfied",
+        "mandatoryComponents": {
+            "desktop": [
+                "cpu",
+                "motherboard",
+                "ram"
+            ],
+            "laptop": [
+                "laptop"
+            ]
+        },
+        "compatibilityChecks": [
+            {
+                "id": "socket_match",
+                "description": "CPU socket must match motherboard socket",
+                "severity": "critical",
+                "components": [
+                    "cpu",
+                    "motherboard"
+                ]
+            },
+            {
+                "id": "ram_type_match",
+                "description": "RAM type must match motherboard RAM support",
+                "severity": "critical",
+                "components": [
+                    "ram",
+                    "motherboard"
+                ]
+            },
+            {
+                "id": "form_factor_match",
+                "description": "Motherboard form factor must fit in case",
+                "severity": "critical",
+                "components": [
+                    "motherboard",
+                    "pcCase"
+                ]
+            },
+            {
+                "id": "psu_wattage",
+                "description": "PSU wattage must be sufficient for all components",
+                "severity": "critical",
+                "components": [
+                    "psu",
+                    "gpu",
+                    "cpu"
+                ]
+            },
+            {
+                "id": "gpu_length",
+                "description": "GPU length must fit in case (if specified)",
+                "severity": "warning",
+                "components": [
+                    "gpu",
+                    "pcCase"
+                ]
+            }
+        ]
+    }
+}

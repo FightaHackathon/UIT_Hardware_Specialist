@@ -1,0 +1,302 @@
+{
+    "metadata": {
+        "version": "1.0.0",
+        "lastUpdated": "2026-01-27",
+        "description": "Knowledge graph defining relationships and dependencies between PC components",
+        "ontologyType": "Hardware Component Ontology"
+    },
+    "nodes": [
+        {
+            "id": "cpu",
+            "type": "component",
+            "label": "CPU",
+            "category": "essential",
+            "description": "Central Processing Unit - executes instructions"
+        },
+        {
+            "id": "motherboard",
+            "type": "component",
+            "label": "Motherboard",
+            "category": "essential",
+            "description": "Main circuit board connecting all components"
+        },
+        {
+            "id": "gpu",
+            "type": "component",
+            "label": "GPU",
+            "category": "optional",
+            "description": "Graphics Processing Unit - handles rendering"
+        },
+        {
+            "id": "ram",
+            "type": "component",
+            "label": "RAM",
+            "category": "essential",
+            "description": "Random Access Memory - temporary storage"
+        },
+        {
+            "id": "storage",
+            "type": "component",
+            "label": "Storage",
+            "category": "optional",
+            "description": "Persistent data storage"
+        },
+        {
+            "id": "psu",
+            "type": "component",
+            "label": "PSU",
+            "category": "optional",
+            "description": "Power Supply Unit - provides power"
+        },
+        {
+            "id": "pcCase",
+            "type": "component",
+            "label": "Case",
+            "category": "optional",
+            "description": "Chassis housing all components"
+        },
+        {
+            "id": "workload",
+            "type": "context",
+            "label": "Workload",
+            "description": "Software and tasks the user needs to run"
+        },
+        {
+            "id": "compatibility",
+            "type": "constraint",
+            "label": "Compatibility",
+            "description": "Hardware compatibility requirements"
+        },
+        {
+            "id": "performance",
+            "type": "metric",
+            "label": "Performance",
+            "description": "System performance characteristics"
+        }
+    ],
+    "edges": [
+        {
+            "id": "e1",
+            "from": "cpu",
+            "to": "motherboard",
+            "relationship": "REQUIRES_SOCKET",
+            "constraint": "socket_match",
+            "bidirectional": true,
+            "critical": true,
+            "description": "CPU and motherboard must have matching socket types (LGA1700, AM5, AM4)"
+        },
+        {
+            "id": "e2",
+            "from": "ram",
+            "to": "motherboard",
+            "relationship": "REQUIRES_TYPE",
+            "constraint": "ram_type_match",
+            "bidirectional": true,
+            "critical": true,
+            "description": "RAM type (DDR4/DDR5) must match motherboard support"
+        },
+        {
+            "id": "e3",
+            "from": "motherboard",
+            "to": "pcCase",
+            "relationship": "REQUIRES_FORM_FACTOR",
+            "constraint": "form_factor_match",
+            "bidirectional": true,
+            "critical": true,
+            "description": "Motherboard form factor (ATX, mATX, E-ATX) must fit in case"
+        },
+        {
+            "id": "e4",
+            "from": "gpu",
+            "to": "psu",
+            "relationship": "REQUIRES_POWER",
+            "constraint": "psu_wattage",
+            "bidirectional": false,
+            "critical": true,
+            "description": "GPU power consumption must not exceed PSU capacity"
+        },
+        {
+            "id": "e5",
+            "from": "cpu",
+            "to": "psu",
+            "relationship": "REQUIRES_POWER",
+            "constraint": "psu_wattage",
+            "bidirectional": false,
+            "critical": true,
+            "description": "CPU power consumption contributes to total system power draw"
+        },
+        {
+            "id": "e6",
+            "from": "gpu",
+            "to": "pcCase",
+            "relationship": "REQUIRES_SPACE",
+            "constraint": "gpu_length",
+            "bidirectional": false,
+            "critical": false,
+            "description": "GPU physical dimensions must fit within case clearance"
+        },
+        {
+            "id": "e7",
+            "from": "storage",
+            "to": "motherboard",
+            "relationship": "CONNECTS_TO",
+            "constraint": "interface_support",
+            "bidirectional": false,
+            "critical": false,
+            "description": "Storage connects to motherboard via M.2 or SATA"
+        },
+        {
+            "id": "e8",
+            "from": "cpu",
+            "to": "gpu",
+            "relationship": "SYNERGY",
+            "constraint": "bottleneck_prevention",
+            "bidirectional": true,
+            "critical": false,
+            "description": "CPU and GPU should be balanced to prevent bottlenecks"
+        },
+        {
+            "id": "e9",
+            "from": "workload",
+            "to": "cpu",
+            "relationship": "DEMANDS",
+            "constraint": "performance_requirement",
+            "bidirectional": false,
+            "critical": false,
+            "description": "Workload determines CPU core count and speed requirements"
+        },
+        {
+            "id": "e10",
+            "from": "workload",
+            "to": "ram",
+            "relationship": "DEMANDS",
+            "constraint": "performance_requirement",
+            "bidirectional": false,
+            "critical": false,
+            "description": "Workload determines RAM capacity requirements"
+        },
+        {
+            "id": "e11",
+            "from": "workload",
+            "to": "gpu",
+            "relationship": "DEMANDS",
+            "constraint": "performance_requirement",
+            "bidirectional": false,
+            "critical": false,
+            "description": "Workload determines GPU requirements (gaming, 3D, ML)"
+        },
+        {
+            "id": "e12",
+            "from": "workload",
+            "to": "storage",
+            "relationship": "DEMANDS",
+            "constraint": "performance_requirement",
+            "bidirectional": false,
+            "critical": false,
+            "description": "Workload determines storage speed and capacity requirements"
+        }
+    ],
+    "relationshipTypes": {
+        "REQUIRES_SOCKET": {
+            "description": "Physical socket compatibility constraint",
+            "validationMethod": "exact_match",
+            "severity": "critical"
+        },
+        "REQUIRES_TYPE": {
+            "description": "Type compatibility constraint (DDR4/DDR5)",
+            "validationMethod": "exact_match",
+            "severity": "critical"
+        },
+        "REQUIRES_FORM_FACTOR": {
+            "description": "Physical size compatibility",
+            "validationMethod": "subset_match",
+            "severity": "critical"
+        },
+        "REQUIRES_POWER": {
+            "description": "Power supply sufficiency",
+            "validationMethod": "threshold_check",
+            "severity": "critical"
+        },
+        "REQUIRES_SPACE": {
+            "description": "Physical clearance requirement",
+            "validationMethod": "dimension_check",
+            "severity": "warning"
+        },
+        "CONNECTS_TO": {
+            "description": "Interface connection requirement",
+            "validationMethod": "interface_check",
+            "severity": "info"
+        },
+        "SYNERGY": {
+            "description": "Performance balance relationship",
+            "validationMethod": "tier_comparison",
+            "severity": "warning"
+        },
+        "DEMANDS": {
+            "description": "Workload performance requirement",
+            "validationMethod": "benchmark_check",
+            "severity": "info"
+        }
+    },
+    "inferenceRules": {
+        "description": "Logical inference rules for the expert system",
+        "rules": [
+            {
+                "id": "r1",
+                "name": "Socket Compatibility",
+                "condition": "IF cpu.socket != motherboard.socket",
+                "conclusion": "THEN system is incompatible",
+                "action": "report_critical_error",
+                "priority": 1
+            },
+            {
+                "id": "r2",
+                "name": "RAM Type Compatibility",
+                "condition": "IF ram.type != motherboard.ramType",
+                "conclusion": "THEN system is incompatible",
+                "action": "report_critical_error",
+                "priority": 1
+            },
+            {
+                "id": "r3",
+                "name": "PSU Sufficiency",
+                "condition": "IF (cpu.tdp + gpu.tdp + baseline) > psu.wattage * 0.8",
+                "conclusion": "THEN PSU is insufficient",
+                "action": "report_critical_error",
+                "priority": 1
+            },
+            {
+                "id": "r4",
+                "name": "Form Factor Fit",
+                "condition": "IF motherboard.formFactor NOT IN case.supportedFormFactors",
+                "conclusion": "THEN motherboard won't fit in case",
+                "action": "report_critical_error",
+                "priority": 1
+            },
+            {
+                "id": "r5",
+                "name": "CPU-GPU Balance",
+                "condition": "IF (cpu.tier == 'entry-level' AND gpu.tier == 'high-end')",
+                "conclusion": "THEN CPU will bottleneck GPU",
+                "action": "report_warning",
+                "priority": 2
+            },
+            {
+                "id": "r6",
+                "name": "RAM Sufficiency for Workload",
+                "condition": "IF ram.capacity < workload.recommendedRAM",
+                "conclusion": "THEN RAM may be insufficient for workload",
+                "action": "report_warning",
+                "priority": 2
+            },
+            {
+                "id": "r7",
+                "name": "Storage Speed for Workload",
+                "condition": "IF storage.interface == 'SATA' AND workload.requiresNVMe",
+                "conclusion": "THEN storage will be slow for workload",
+                "action": "report_warning",
+                "priority": 2
+            }
+        ]
+    }
+}

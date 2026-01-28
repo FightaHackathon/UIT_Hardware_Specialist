@@ -1,0 +1,5 @@
+{
+  "name": "UIT Hardware Specialist",
+  "description": "A Constraint Satisfaction Expert System for validating PC component compatibility against a strict knowledge graph.",
+  "requestFramePermissions": []
+}

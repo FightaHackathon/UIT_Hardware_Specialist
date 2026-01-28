@@ -1,0 +1,257 @@
+{
+    "metadata": {
+        "version": "1.0.0",
+        "lastUpdated": "2026-01-27",
+        "description": "Performance benchmarks and workload requirements for UIT student software"
+    },
+    "workloads": {
+        "visualStudio": {
+            "name": "Visual Studio / VS Code",
+            "category": "Software Engineering",
+            "description": "Large projects, compiling, debugging",
+            "requirements": {
+                "cpu": {
+                    "minCores": 4,
+                    "recommendedCores": 8,
+                    "preferredFeatures": [
+                        "High single-thread performance"
+                    ]
+                },
+                "ram": {
+                    "minimum": 8,
+                    "recommended": 16,
+                    "optimal": 32
+                },
+                "storage": {
+                    "type": "SSD",
+                    "speed": "NVMe preferred",
+                    "minimumCapacity": 256
+                },
+                "gpu": {
+                    "required": false,
+                    "notes": "Integrated graphics sufficient"
+                }
+            },
+            "scoringWeights": {
+                "cpu": 0.5,
+                "ram": 0.3,
+                "storage": 0.15,
+                "gpu": 0.05
+            }
+        },
+        "androidStudio": {
+            "name": "Android Studio",
+            "category": "Mobile Development",
+            "description": "Heavy RAM & CPU usage for emulators",
+            "requirements": {
+                "cpu": {
+                    "minCores": 6,
+                    "recommendedCores": 8,
+                    "preferredFeatures": [
+                        "Virtualization support",
+                        "High multi-core performance"
+                    ]
+                },
+                "ram": {
+                    "minimum": 16,
+                    "recommended": 32,
+                    "optimal": 64
+                },
+                "storage": {
+                    "type": "SSD",
+                    "speed": "NVMe required",
+                    "minimumCapacity": 512
+                },
+                "gpu": {
+                    "required": false,
+                    "notes": "Dedicated GPU helps with emulator graphics acceleration"
+                }
+            },
+            "scoringWeights": {
+                "cpu": 0.4,
+                "ram": 0.4,
+                "storage": 0.15,
+                "gpu": 0.05
+            }
+        },
+        "unity": {
+            "name": "Unity / Unreal Engine",
+            "category": "Game Development",
+            "description": "Requires strong GPU for rendering",
+            "requirements": {
+                "cpu": {
+                    "minCores": 6,
+                    "recommendedCores": 12,
+                    "preferredFeatures": [
+                        "High multi-core performance"
+                    ]
+                },
+                "ram": {
+                    "minimum": 16,
+                    "recommended": 32,
+                    "optimal": 64
+                },
+                "storage": {
+                    "type": "SSD",
+                    "speed": "NVMe required",
+                    "minimumCapacity": 512
+                },
+                "gpu": {
+                    "required": true,
+                    "minimumVRAM": 6,
+                    "recommendedVRAM": 12,
+                    "features": [
+                        "Ray tracing support preferred"
+                    ]
+                }
+            },
+            "scoringWeights": {
+                "cpu": 0.25,
+                "ram": 0.25,
+                "storage": 0.1,
+                "gpu": 0.4
+            }
+        },
+        "blender": {
+            "name": "Blender",
+            "category": "3D Modeling & Animation",
+            "description": "Heavy GPU usage for rendering, CUDA/OptiX support beneficial",
+            "requirements": {
+                "cpu": {
+                    "minCores": 6,
+                    "recommendedCores": 16,
+                    "preferredFeatures": [
+                        "High multi-core performance"
+                    ]
+                },
+                "ram": {
+                    "minimum": 16,
+                    "recommended": 32,
+                    "optimal": 64
+                },
+                "storage": {
+                    "type": "SSD",
+                    "speed": "NVMe required",
+                    "minimumCapacity": 512
+                },
+                "gpu": {
+                    "required": true,
+                    "minimumVRAM": 8,
+                    "recommendedVRAM": 12,
+                    "features": [
+                        "CUDA cores for NVIDIA",
+                        "Large VRAM for complex scenes"
+                    ]
+                }
+            },
+            "scoringWeights": {
+                "cpu": 0.3,
+                "ram": 0.2,
+                "storage": 0.1,
+                "gpu": 0.4
+            }
+        },
+        "docker": {
+            "name": "Docker / Kubernetes",
+            "category": "DevOps/Networking",
+            "description": "Virtual Machines, high RAM and core count",
+            "requirements": {
+                "cpu": {
+                    "minCores": 4,
+                    "recommendedCores": 8,
+                    "preferredFeatures": [
+                        "Virtualization support (VT-x/AMD-V)",
+                        "High multi-core performance"
+                    ]
+                },
+                "ram": {
+                    "minimum": 16,
+                    "recommended": 32,
+                    "optimal": 64
+                },
+                "storage": {
+                    "type": "SSD",
+                    "speed": "NVMe required",
+                    "minimumCapacity": 512
+                },
+                "gpu": {
+                    "required": false,
+                    "notes": "Not typically needed unless running GPU containers"
+                }
+            },
+            "scoringWeights": {
+                "cpu": 0.4,
+                "ram": 0.45,
+                "storage": 0.1,
+                "gpu": 0.05
+            }
+        },
+        "dataScience": {
+            "name": "Python / Jupyter / ML",
+            "category": "Data Science",
+            "description": "Local LLMs, VRAM & CUDA cores preferred",
+            "requirements": {
+                "cpu": {
+                    "minCores": 6,
+                    "recommendedCores": 12,
+                    "preferredFeatures": [
+                        "High multi-core performance"
+                    ]
+                },
+                "ram": {
+                    "minimum": 16,
+                    "recommended": 32,
+                    "optimal": 64
+                },
+                "storage": {
+                    "type": "SSD",
+                    "speed": "NVMe required",
+                    "minimumCapacity": 512
+                },
+                "gpu": {
+                    "required": true,
+                    "minimumVRAM": 8,
+                    "recommendedVRAM": 12,
+                    "features": [
+                        "CUDA cores for NVIDIA",
+                        "Tensor cores for AI acceleration",
+                        "Large VRAM for model training"
+                    ]
+                }
+            },
+            "scoringWeights": {
+                "cpu": 0.25,
+                "ram": 0.25,
+                "storage": 0.1,
+                "gpu": 0.4
+            }
+        }
+    },
+    "tierPerformanceRatings": {
+        "description": "Base performance ratings for component tiers",
+        "cpu": {
+            "high-end": 95,
+            "mid-range": 75,
+            "budget": 60,
+            "entry-level": 45
+        },
+        "gpu": {
+            "high-end": 95,
+            "mid-range": 75,
+            "budget": 60,
+            "entry-level": 35
+        },
+        "ram": {
+            "64GB": 100,
+            "32GB": 85,
+            "16GB": 65,
+            "8GB": 40
+        },
+        "storage": {
+            "NVMe-Gen4-2TB+": 95,
+            "NVMe-Gen4-1TB": 85,
+            "NVMe-Gen4-500GB": 70,
+            "SATA-SSD": 40
+        }
+    }
+}
