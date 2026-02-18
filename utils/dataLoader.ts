@@ -1,40 +1,126 @@
 /**
  * Data Loader Utilities
- * 
+ *
  * This module provides functions to load datasets from the knowledge base.
  * It serves as the interface between the application and the structured JSON data.
  */
 
 import componentsData from '../knowledge-base/datasets/components.json';
-import laptopsData from '../knowledge-base/datasets/laptops.json';
+// import laptopsData from '../knowledge-base/datasets/laptops.json'; // Deprecated
+import Papa from 'papaparse';
+import laptopCsvContent from '../dataset/merged_laptop_data.csv?raw';
 import compatibilityRulesData from '../knowledge-base/datasets/compatibility-rules.json';
 import performanceBenchmarksData from '../knowledge-base/datasets/performance-benchmarks.json';
 import knowledgeGraphData from '../knowledge-base/ontology/knowledge-graph.json';
 
-export type ComponentCategory = 'CPU' | 'GPU' | 'Motherboard' | 'RAM' | 'Storage' | 'PSU' | 'Case';
+import { ComponentCategory, ComponentPart, PCBuild } from '../types';
+
+interface LaptopCSVRow {
+    '': string; // Index
+    model_name: string;
+    brand: string;
+    processor_name: string;
+    'ram(GB)': string;
+    'ssd(GB)': string;
+    'Hard Disk(GB)': string;
+    'Operating System': string;
+    graphics: string;
+    'screen_size(inches)': string;
+    'resolution (pixels)': string; // Fixed typo in header access if needed
+    no_of_cores: string;
+    no_of_threads: string;
+    spec_score: string;
+    price: string;
+    Major: string;
+    Activities: string;
+    ProgramList: string;
+}
+
+const parseLaptopsFromCSV = (): ComponentPart[] => {
+    const { data } = Papa.parse<LaptopCSVRow>(laptopCsvContent, {
+        header: true,
+        skipEmptyLines: true,
+        dynamicTyping: false // Keep as strings to safely parse
+    });
+
+    return data.map((row, index) => {
+        const ram = row['ram(GB)'] || '0';
+        const ssd = row['ssd(GB)'] || '0';
+        const hdd = row['Hard Disk(GB)'] || '0';
+        const gpu = row['graphics'] || 'Integrated';
+        const display = `${row['screen_size(inches)'] || '15.6'}" ${row['resolution (pixels)'] || '1920x1080'}`;
+        const cpu = row['processor_name'] || 'Unknown Processor';
+
+        // Construct a specs string
+        // const specs = `${cpu}, ${ram}GB RAM, ${ssd}GB SSD, ${gpu}, ${display}`; // Original line, kept for reference
+
+        // Improve specs display if HDD exists
+        const storage = parseInt(hdd) > 0 ? `${ssd}GB SSD + ${hdd}GB HDD` : `${ssd}GB SSD`;
+        const fullSpecs = `${cpu} | ${ram}GB RAM | ${storage} | ${gpu} | ${display}`;
+
+        // Simple heuristic for battery life
+        let battery = "6-9 Hrs (Standard)";
+        const lowerName = (row.model_name || '').toLowerCase();
+        const lowerGpu = gpu.toLowerCase();
+        const os = (row['Operating System'] || '').toLowerCase();
+
+        // 1. Gaming Laptops (High Power Consumption)
+        if (lowerGpu.includes('rtx') || lowerGpu.includes('gtx') || lowerName.includes('gaming') || lowerName.includes('legion') || lowerName.includes('rog') || lowerName.includes('tuf')) {
+            battery = "3-5 Hrs (Gaming Mode)";
+        }
+
+        // 2. Apple Silicon (High Efficiency)
+        else if (os.includes('mac') || lowerName.includes('macbook') || row.brand === 'Apple') {
+            battery = "15-18 Hrs (Apple Silicon)";
+        }
+
+        // 3. Ultrabooks (Good Battery Life)
+        else if (lowerName.includes('zenbook') || lowerName.includes('swift') || lowerName.includes('xps') || lowerName.includes('gram') || lowerName.includes('yoga')) {
+            battery = "10-12 Hrs (Ultrabook)";
+        }
+
+        return {
+            id: row[''] || `csv-${index}`,
+            name: row.model_name || 'Unknown Model',
+            price: parseInt(row.price) || 0,
+            specs: fullSpecs,
+            battery: battery,
+            major: row.Major,
+            activities: row.Activities,
+            programList: row.ProgramList
+        };
+    });
+};
+
+const parsedLaptops = parseLaptopsFromCSV();
 
 /**
  * Load all component data from the knowledge base
- * 
- * @returns Object containing all component categories
+ *
+ * @param category - Component category (CPU, GPU, etc.) or 'Laptop'
+ * @returns Array of ComponentPart objects for the given category
  * @example
- * const components = loadComponents();
- * const cpuList = components.CPU.components;
+ * const cpus = loadComponents('CPU');
+ * const laptops = loadComponents('Laptop');
  */
-export const loadComponents = () => {
-    return componentsData;
+export const loadComponents = (category: ComponentCategory): ComponentPart[] => {
+    if (category === 'Laptop') {
+        return parsedLaptops;
+    }
+    const categoryData = (componentsData as any)[category];
+    return categoryData ? categoryData.components : [];
 };
 
 /**
- * Load laptop models from the knowledge base
- * 
+ * Load laptop models from the knowledge base (now from CSV)
+ *
  * @returns Array of laptop models with specifications
  * @example
  * const laptops = loadLaptops();
  * const macbookPro = laptops.find(l => l.id === 'l-mbp-m3');
  */
-export const loadLaptops = () => {
-    return laptopsData.laptops;
+export const loadLaptops = (): ComponentPart[] => {
+    return parsedLaptops;
 };
 
 /**
@@ -97,7 +183,7 @@ export const getComponentById = (category: ComponentCategory, id: string) => {
  * const laptop = getLaptopById('l-mbp-m3');
  */
 export const getLaptopById = (id: string) => {
-    return laptopsData.laptops.find((l: any) => l.id === id) || null;
+    return parsedLaptops.find((l: any) => l.id === id) || null;
 };
 
 /**
@@ -215,7 +301,8 @@ export const formatComponentsForUI = () => {
     });
 
     // Format laptops
-    formatted['Laptop'] = laptopsData.laptops.map((l: any) => ({
+    // Format laptops
+    formatted['Laptop'] = parsedLaptops.map((l: any) => ({
         id: l.id,
         name: l.name,
         specs: l.specs,
@@ -228,7 +315,7 @@ export const formatComponentsForUI = () => {
 // Export all data for direct access if needed
 export {
     componentsData,
-    laptopsData,
+    // laptopsData, // Removed
     compatibilityRulesData,
     performanceBenchmarksData,
     knowledgeGraphData

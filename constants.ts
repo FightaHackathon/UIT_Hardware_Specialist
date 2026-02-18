@@ -1,4 +1,5 @@
 import { formatComponentsForUI } from './utils/dataLoader';
+import { ComponentPart } from './types';
 
 /**
  * Application Title
@@ -82,7 +83,38 @@ export const UI_TEXT = {
   empty_state: { en: "Select components and run validation", "my": "အစိတ်အပိုင်းများရွေးချယ်ပြီး စစ်ဆေးပါ" },
   checking_msg: { en: "Checking for UIT Coursework Compatibility", "my": "UIT ကျောင်းသင်ခန်းစာများနှင့် ကိုက်ညီမှုရှိမရှိ စစ်ဆေးနေပါသည်" },
   score_label: { en: "UIT Suitability Score", "my": "UIT အသုံးပြုရန် သင့်လျော်မှု ရမှတ်" },
-  battery_est: { en: "Est. Battery Life", "my": "ဘက်ထရီကြာချိန် (ခန့်မှန်း)" }
+  tab_budget: { en: "Budget & Major", my: "ဘတ်ဂျက်နှင့် မေဂျာ" },
+  tab_compare: { en: "Compare", my: "နှိုင်းယှဉ်ရန်" },
+  filter_title: { en: "Smart Filter", my: "စမတ် ဖစ်လ်တာ" },
+  compare_title: { en: "Comparison Tool", my: "နှိုင်းယှဉ်မှု ကိရိယာ" },
+
+  // Filter Controls
+  label_max_budget: { en: "Max Budget", my: "အများဆုံး ဘတ်ဂျက်" },
+  label_major: { en: "Your Major", my: "သင့် မေဂျာ" },
+  label_programs: { en: "Required Programs", my: "လိုအပ်သော ပရိုဂရမ်များ" },
+  label_gaming: { en: "I also want to play games", my: "ဂိမ်းဆော့ရန်အတွက်ပါ လိုချင်သည်" },
+  label_gaming_note: { en: "(Requires dedicated GPU)", my: "(သီးသန့် GPU လိုအပ်သည်)" },
+  placeholder_programs: { en: "e.g. AutoCAD, Adobe Premiere...", my: "ဥပမာ - AutoCAD, Adobe Premiere..." },
+  option_any_major: { en: "Any Major", my: "မေဂျာ အားလုံး" },
+
+  // Results & Cards
+  header_recommended: { en: "Recommended Options", my: "အကြံပြုထားသော ရွေးချယ်စရာများ" },
+  btn_select_laptop: { en: "Select This Laptop", my: "ဤ Laptop ကို ရွေးမည်" },
+  btn_selected: { en: "Selected", my: "ရွေးချယ်ပြီး" },
+  lbl_compare: { en: "Compare", my: "နှိုင်းယှဉ်မည်" },
+
+  // Compare View
+  compare_empty: { en: "Select laptops from the Budget or Laptop tabs to compare.", my: "နှိုင်းယှဉ်ရန် Laptop များကို Budget (သို့) Laptop တက်ဘ်မှ ရွေးချယ်ပါ။" },
+  verdict_gaming: { en: "Gaming Verdict", my: "ဂိမ်းကစားနိုင်စွမ်း" },
+  verdict_capable: { en: "Capable", my: "အဆင်ပြေသည်" },
+  verdict_basic: { en: "Basic / Casual Only", my: "သာမန်အသုံးပြုမှုသာ" },
+
+  label_price: { en: "Price", my: "ဈေးနှုန်း" },
+  label_specs: { en: "Specs", my: "အသေးစိတ်" },
+  label_program_list: { en: "Programs", my: "ပရိုဂရမ်များ" },
+
+  battery_est: { en: "Est. Battery Life", "my": "ဘက်ထရီကြာချိန် (ခန့်မှန်း)" },
+  btn_translate: { en: "Translate to Burmese", "my": "မြန်မာဘာသာသို့ ပြန်ဆိုရန်" }
 };
 
 /**
@@ -106,4 +138,4 @@ export const UI_TEXT = {
  * @see knowledge-base/datasets/laptops.json
  * @see utils/dataLoader.ts
  */
-export const COMPONENT_DB: Record<string, { id: string, name: string, specs: string, battery?: string }[]> = formatComponentsForUI();
+export const COMPONENT_DB: Record<string, ComponentPart[]> = formatComponentsForUI();

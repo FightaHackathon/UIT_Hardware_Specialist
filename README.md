@@ -1,82 +1,110 @@
-# UIT Hardware Specialist - Project Overview
+# UIT Hardware Specialist 🖥️🤖
 
-## Introduction
+An AI-powered expert system designed to help University of Information Technology (UIT) students validate PC builds and laptop choices for demanding coursework.
 
-The **UIT Hardware Specialist** is an AI-powered expert system designed to help University of Information Technology students validate PC builds and laptop choices for demanding coursework.
+![License](https://img.shields.io/badge/license-Educational-blue.svg)
+![React](https://img.shields.io/badge/React-19.2-61DAFB?logo=react)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.8-3178C6?logo=typescript)
+![Mistral AI](https://img.shields.io/badge/AI-Mistral-orange)
 
-## Features
+## 📋 Project Description
 
-- ✅ **Desktop PC Build Validation**: Check compatibility of CPU, GPU, RAM, motherboard, storage, PSU, and case
-- 💻 **Laptop Model Analysis**: Evaluate laptops for student workload suitability
-- 🤖 **AI-Powered Recommendations**: Get detailed analysis from Mistral AI
-- 🌍 **Bilingual Support**: English and Burmese (Myanmar) language support
-- 📊 **Suitability Scoring**: 0-100 score based on UIT workload requirements
-- ⚡ **Real-time Validation**: Instant compatibility checking
+**UIT Hardware Specialist** is an intelligent assistant that helps students make informed decisions about computer hardware purchases and builds. The system combines:
 
-## Technology Stack
+- **Knowledge Engineering**: Structured datasets containing component specifications, compatibility rules, and performance benchmarks
+- **AI Analysis**: Mistral Large LLM for natural language explanations and recommendations
+- **Expert System Rules**: Automated validation of socket compatibility, RAM types, power requirements, and bottleneck detection
+- **Bilingual Support**: Full support for English and Burmese (Myanmar) languages
+
+### Key Capabilities
+
+✅ **Desktop PC Build Validation**
+- Component compatibility checking (CPU, GPU, RAM, motherboard, storage, PSU, case)
+- Physical and electrical compatibility verification
+- Performance bottleneck detection
+- Suitability scoring (0-100) for UIT workloads
+
+💻 **Laptop Model Analysis**
+- Pre-configured laptop evaluation
+- Battery life assessment for campus usage
+- Performance analysis for student workloads
+- Portability and thermal management considerations
+
+🎯 **Workload Profiling**
+- Visual Studio / VS Code (Software Engineering)
+- Android Studio (Mobile Development)
+- Unity / Unreal Engine (Game Development)
+- Docker / Kubernetes (DevOps)
+- Python / Jupyter / ML Libraries (Data Science)
+
+## 🏗️ Architecture
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                      Frontend (React)                        │
+│  • Component Selection UI                                   │
+│  • Real-time Validation                                     │
+│  • Bilingual Interface (EN/MM)                              │
+└──────────────────┬──────────────────────────────────────────┘
+                   │ HTTP API Calls
+                   ▼
+┌─────────────────────────────────────────────────────────────┐
+│                  Backend (Express.js)                        │
+│  • API Proxy Server                                         │
+│  • Mistral AI Integration                                   │
+│  • Environment Configuration                                │
+└──────────────────┬──────────────────────────────────────────┘
+                   │ Mistral SDK
+                   ▼
+┌─────────────────────────────────────────────────────────────┐
+│                    Mistral AI API                            │
+│  • Natural Language Analysis                                │
+│  • Component Recommendations                                │
+│  • Suitability Scoring                                      │
+└─────────────────────────────────────────────────────────────┘
+```
+
+## 🚀 Features
+
+- **🔍 Real-time Compatibility Checking**: Instant validation as you build
+- **🤖 AI-Powered Recommendations**: Detailed analysis from Mistral Large LLM
+- **📊 Suitability Scoring**: 0-100 score based on UIT coursework requirements
+- **🌍 Bilingual Support**: Switch between English and Burmese seamlessly
+- **⚡ Knowledge Base**: 60+ PC components, 9 laptop models, comprehensive compatibility rules
+- **🔒 Secure API Handling**: Backend proxy keeps API keys safe from frontend exposure
+
+## 🛠️ Technology Stack
 
 ### Frontend
-- **React** + **TypeScript**: UI framework
-- **Vite**: Build tool and dev server
-- **Tailwind CSS**: Styling
-- **Lucide React**: Icons
+- **React 19** + **TypeScript 5.8**: Modern UI framework with type safety
+- **Vite 6**: Fast build tool and development server
+- **Lucide React**: Beautiful iconography
+- **CSS**: Custom styling for dark theme UI
 
 ### Backend
-- **Express.js**: API server
-- **Mistral AI**: Large Language Model for analysis
-- **Node.js**: Runtime environment
+- **Express.js 4**: Backend API server
+- **Mistral AI SDK**: Integration with Mistral Large LLM
+- **Node.js 18+**: JavaScript runtime
+- **dotenv**: Secure environment variable management
 
 ### Knowledge Engineering
-- **Structured JSON Datasets**: Component specifications and compatibility rules
+- **JSON Datasets**: Component specifications and compatibility rules
 - **Knowledge Graph**: Component relationships and constraints
-- **Expert System Rules**: Validation and scoring logic
+- **Expert System Logic**: Validation and scoring algorithms
 
-## Project Structure
-
-```
-uit-hardware-specialist/
-├── knowledge-base/          # Knowledge engineering assets
-│   ├── datasets/            # Component data and compatibility rules
-│   │   ├── components.json
-│   │   ├── laptops.json
-│   │   ├── compatibility-rules.json
-│   │   └── performance-benchmarks.json
-│   └── ontology/            # Knowledge graph
-│       └── knowledge-graph.json
-├── docs/                    # Documentation
-│   ├── architecture/        # System architecture docs
-│   │   ├── knowledge-engineering-overview.md
-│   │   ├── ai-inference-flow.md
-│   │   └── knowledge-graph-visualization.md
-│   └── FUNCTIONS.md         # Function documentation
-├── utils/                   # Utility functions
-│   └── dataLoader.ts        # Knowledge base data loader
-├── services/                # Service layer
-│   └── mistralService.ts    # Mistral AI integration
-├── components/              # React components
-│   └── ChatMessage.tsx
-├── App.tsx                  # Main application component
-├── constants.ts             # App constants and UI text
-├── types.ts                 # TypeScript type definitions
-├── server.js                # Backend API server
-└── package.json             # Dependencies
-```
-
-## Getting Started
-
-> [!IMPORTANT]
-> **First time setup?** Check out our detailed **[SETUP.md](SETUP.md)** guide for step-by-step instructions!
+## 📦 Installation
 
 ### Prerequisites
-- **Node.js 18+** installed ([Download](https://nodejs.org/))
-- **Mistral AI API key** (free tier available)
 
-### Quick Start
+- **Node.js 18+** ([Download](https://nodejs.org/))
+- **npm** (comes with Node.js)
+- **Mistral AI API Key** ([Get one free](https://console.mistral.ai/))
 
-1. **Clone the repository**
+### Setup Instructions
+
+1. **Clone or navigate to the project**
    ```bash
-   git clone <your-repo-url>
-   cd uit-hardware-specialist-github
+   cd "c:\Users\user\Downloads\uit-hardware-specialist (1)"
    ```
 
 2. **Install dependencies**
@@ -84,135 +112,180 @@ uit-hardware-specialist/
    npm install
    ```
 
-3. **Get your Mistral AI API key**
+3. **Configure environment variables**
    
-   - Visit [Mistral AI Console](https://console.mistral.ai/)
-   - Sign up or log in
-   - Go to [API Keys](https://console.mistral.ai/api-keys/) and create a new key
-   - **Copy the key** (you won't see it again!)
-
-4. **Configure environment variables**
-   
-   Copy the example file and add your API key:
-   ```bash
-   # Windows PowerShell
-   Copy-Item .env.example .env
-   
-   # macOS/Linux
-   cp .env.example .env
-   ```
-   
-   Edit `.env` and add your key:
+   Create a `.env` file in the project root:
    ```env
    MISTRAL_API_KEY=your_actual_mistral_api_key_here
    PORT=3001
    ```
    
-   > **⚠️ IMPORTANT**: The `.env` file contains your API key and is git-ignored. Never commit it!
+   > ⚠️ **Security Note**: Never commit your `.env` file. It's already in `.gitignore`.
 
-5. **Run the application**
+4. **Get your Mistral AI API Key**
+   - Visit [Mistral AI Console](https://console.mistral.ai/)
+   - Sign up or log in
+   - Go to [API Keys](https://console.mistral.ai/api-keys/)
+   - Create a new key and copy it to your `.env` file
+
+5. **Start the application**
    ```bash
    npm run dev:all
    ```
 
-   This starts:
-   - Frontend dev server on `http://localhost:5173`
-   - Backend API server on `http://localhost:3001`
-   
+   This command starts both:
+   - **Frontend**: http://localhost:5173
+   - **Backend**: http://localhost:3001
+
    You should see: `✅ Mistral client initialized successfully`
 
-### Available Scripts
-
-- `npm run dev` - Start frontend only
-- `npm run server` - Start backend only  
-- `npm run dev:all` - Start both frontend and backend concurrently (recommended)
-- `npm run build` - Build for production
-
-## Usage
+## 📖 Usage
 
 ### Desktop Build Validation
 
-1. Select **Desktop Build** tab
-2. Choose components from dropdowns:
-   - CPU (required)
-   - Motherboard (required)
-   - RAM (required)
-   - GPU, Storage, PSU, Case (optional but recommended)
-3. Click **VALIDATE & CHECK SUITABILITY**
-4. View compatibility analysis and score
+1. Open http://localhost:5173 in your browser
+2. Select the **Desktop Build** tab
+3. Choose components from dropdowns (CPU, Motherboard, RAM are required)
+4. Click **VALIDATE & CHECK SUITABILITY**
+5. Review the AI-powered analysis and suitability score
 
-### Laptop Selection
+### Laptop Analysis
 
-1. Select **Laptop Model** tab
+1. Select the **Laptop Model** tab
 2. Choose a laptop from the dropdown
 3. View battery life estimate
 4. Click **VALIDATE & CHECK SUITABILITY**
 5. Review analysis for campus usage suitability
 
-## Knowledge Base
+### Language Toggle
 
-The expert system uses a comprehensive knowledge base:
+Click the **Globe icon** in the header to switch between English and Burmese (Myanmar).
 
-### Components Database
-- **60+ PC components** with full specifications
-- **9 laptop models** from various price ranges
-- Performance tier classifications
-- Price range estimates
+## 📁 Project Structure
+
+```
+uit-hardware-specialist/
+├── knowledge-base/              # Knowledge engineering assets
+│   ├── datasets/                # Component data and compatibility rules
+│   │   ├── components.json      # PC components database
+│   │   ├── laptops.json         # Laptop models database
+│   │   ├── compatibility-rules.json
+│   │   └── performance-benchmarks.json
+│   ├── ontology/                # Knowledge graph
+│   │   └── knowledge-graph.json
+│   └── README.md                # Knowledge base documentation
+├── docs/                        # Documentation
+│   ├── architecture/            # System architecture docs
+│   │   ├── knowledge-engineering-overview.md
+│   │   ├── ai-inference-flow.md
+│   │   └── knowledge-graph-visualization.md
+│   └── FUNCTIONS.md             # Function documentation
+├── components/                  # React components
+│   └── ChatMessage.tsx          # Chat message component
+├── services/                    # Service layer
+│   └── mistralService.ts        # Mistral AI integration
+├── utils/                       # Utility functions
+│   └── dataLoader.ts            # Knowledge base data loader
+├── uit-hardware-specialist-github/  # Additional project documentation
+│   ├── README.md                # Detailed feature documentation
+│   └── SETUP.md                 # Setup guide
+├── App.tsx                      # Main React application
+├── constants.ts                 # App constants and UI text
+├── types.ts                     # TypeScript type definitions
+├── server.js                    # Backend Express API server
+├── package.json                 # Dependencies and scripts
+├── vite.config.ts               # Vite configuration
+└── tsconfig.json                # TypeScript configuration
+```
+
+## 🔧 Available Scripts
+
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start frontend development server only |
+| `npm run server` | Start backend API server only |
+| `npm run dev:all` | **Start both frontend and backend** (recommended) |
+| `npm run build` | Build frontend for production |
+| `npm run preview` | Preview production build |
+
+## 📚 Knowledge Base
+
+The system includes a comprehensive knowledge base:
+
+### Components Database (60+ items)
+- **CPUs**: Intel i3/i5/i7/i9 (12th-14th gen), AMD Ryzen 5/7/9
+- **GPUs**: NVIDIA RTX 3050-4090, AMD RX 6000/7000 series
+- **Motherboards**: Socket compatibility (LGA1700, AM5, AM4)
+- **RAM**: DDR4/DDR5 modules with speed ratings
+- **Storage**: NVMe SSDs, SATA SSDs, HDDs
+- **PSUs**: 450W-1000W power supplies
+- **Cases**: ATX, mATX, ITX form factors
+
+### Laptop Database (9 models)
+- Budget options (ThinkPad E14, Acer Aspire)
+- Mid-range (Dell XPS 13, ASUS VivoBook)
+- High-performance (MacBook Pro M3, ROG Zephyrus)
 
 ### Compatibility Rules
-- Socket compatibility (Intel LGA1700, AMD AM5/AM4)
-- RAM type matching (DDR4/DDR5)
-- Form factor constraints
+- Socket type matching (LGA1700, AM5, AM4)
+- RAM type compatibility (DDR4/DDR5)
+- Form factor constraints (ATX, mATX, ITX)
 - Power supply requirements
-- Bottleneck detection
+- PCIe generation compatibility
 
-### Workload Benchmarks
-Performance requirements for:
-- Visual Studio / VS Code (Software Engineering)
-- Android Studio (Mobile Development)
-- Unity / Unreal Engine (Game Development)
-- Docker / Kubernetes (DevOps)
-- Python / Jupyter / ML (Data Science)
+## 🤖 AI Integration
 
-## AI Integration
+**Mistral Large** powers the intelligent analysis:
 
-The system uses **Mistral Large** LLM for:
-- Natural language analysis
-- Detailed compatibility explanations
-- Component pairing recommendations
-- Bottleneck identification
-- Student-specific advice (battery life, portability, thermal management)
+- **Natural Language Explanations**: Human-readable compatibility reports
+- **Component Pairing**: Optimal CPU-GPU pairing recommendations
+- **Bottleneck Detection**: Identifies performance mismatches
+- **Student-Specific Advice**: Battery life, portability, thermal considerations
+- **Workload Scoring**: 0-100 suitability score for UIT coursework
 
-### How it Works
+### How It Works
 
 1. User selects components or laptop
-2. System validates hard constraints (socket, RAM type, power)
-3. Build summary sent to Mistral AI with expert system prompt
-4. AI analyzes against UIT workload requirements
-5. Response parsed for score and formatted recommendations
-6. Results displayed to user
+2. Frontend validates basic requirements
+3. Build summary sent to backend API
+4. Backend calls Mistral API with expert system prompt
+5. AI analyzes against UIT workload requirements
+6. Response parsed and displayed with score
 
-## Documentation
+## 🔒 Security
 
-Comprehensive documentation available in `docs/`:
+- **API Key Protection**: Mistral API key stored in `.env` (backend only)
+- **Backend Proxy**: Frontend never accesses API key directly
+- **CORS Enabled**: Configured for local development
+- **.gitignore**: Ensures `.env` is never committed
 
-- **[Knowledge Engineering Overview](docs/architecture/knowledge-engineering-overview.md)**: Expert system design principles
-- **[AI Inference Flow](docs/architecture/ai-inference-flow.md)**: How the AI analysis works
-- **[Knowledge Graph Visualization](docs/architecture/knowledge-graph-visualization.md)**: Visual diagrams of component relationships
-- **[Function Documentation](docs/FUNCTIONS.md)**: Complete reference for all functions
+## 📄 License
 
-## Contributing
+This project is created for educational purposes at the University of Information Technology.
 
+## 🤝 Contributing
 
-1. **Never commit your `.env` file** - It contains your API key!
-2. Follow the setup guide in [SETUP.md](SETUP.md)
-3. Test your changes with `npm run dev:all` before committing
-4. Update documentation if you add new features
+### For Team Members
+
+1. **Never commit `.env`** - Contains sensitive API keys
+2. Follow the setup guide before making changes
+3. Test with `npm run dev:all` before committing
+4. Update documentation for new features
 
 ### Adding New Components
 
 1. Edit `knowledge-base/datasets/components.json`
-2. Add component with all required fields
+2. Add component with all required fields:
+   ```json
+   {
+     "id": "cpu-001",
+     "name": "Intel Core i5-13400F",
+     "type": "CPU",
+     "specs": "10C/16T, 4.6GHz, LGA1700",
+     "price_range": "$200-$250",
+     "tier": "mid"
+   }
+   ```
 3. Update compatibility rules if needed
 
 ### Adding New Workloads
@@ -221,21 +294,14 @@ Comprehensive documentation available in `docs/`:
 2. Define requirements and scoring weights
 3. Update system instruction in `constants.ts`
 
-### Where the API Key is Used
+## 📞 Support
 
-The Mistral API key is configured in **one secure location**:
-- **File**: `server.js` (line 20)
-- **Usage**: Backend server reads from environment variable `process.env.MISTRAL_API_KEY`
-- **Security**: The key is never exposed to the frontend or browser
-
-## License
-
-This project is created for educational purposes at the University of Information Technology.
-
-## Contact
-
-For questions or issues, please contact the UIT IT department.
+For questions, issues, or contributions:
+- Check the [detailed documentation](./uit-hardware-specialist-github/README.md)
+- Review [setup guide](./uit-hardware-specialist-github/SETUP.md)
+- Contact the UIT IT department
 
 ---
 
-**Powered by Mistral AI** | **Built for UIT Students**
+**🚀 Powered by Mistral AI | Built for UIT Students | Made with ❤️ in Myanmar**
+

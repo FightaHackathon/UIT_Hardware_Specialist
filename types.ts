@@ -22,6 +22,9 @@ export interface ComponentPart {
   price?: number;
   specs?: string; // Short spec summary for display
   battery?: string; // Battery life estimate for laptops
+  major?: string; // Recommended major (from CSV)
+  activities?: string; // Recommended activities (from CSV)
+  programList?: string; // List of programs (from CSV)
 }
 
 export interface PCBuild {

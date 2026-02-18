@@ -29,7 +29,7 @@ export const initializeMistral = (): boolean => {
 /**
  * Send a message to the Mistral AI via the backend proxy
  */
-export const sendMessageToMistral = async (message: string): Promise<string> => {
+export const sendMessageToMistral = async (message: string, systemInstructionOverride?: string): Promise<string> => {
   try {
     const response = await fetch(`${API_BASE_URL}/api/chat`, {
       method: 'POST',
@@ -38,7 +38,7 @@ export const sendMessageToMistral = async (message: string): Promise<string> => 
       },
       body: JSON.stringify({
         message,
-        systemInstruction: SYSTEM_INSTRUCTION
+        systemInstruction: systemInstructionOverride || SYSTEM_INSTRUCTION
       }),
     });
 
@@ -61,8 +61,8 @@ export const sendMessageToMistral = async (message: string): Promise<string> => 
     isConnected = false;
 
     // Provide user-friendly error messages
-    if (error.message.includes('Failed to fetch')) {
-      throw new Error("Cannot connect to server. Please make sure the backend is running.");
+    if (error.message.includes('Failed to fetch') || error.message.includes('Network request failed')) {
+      throw new Error("Backend server unreachable. Please run 'npm run dev:all' or start the server.");
     }
 
     throw new Error(error.message || "Failed to get response from AI");
